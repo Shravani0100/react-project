@@ -1,4 +1,4 @@
-import styled from 'styled-components'
+import styled from "styled-components";
 
 const Login = (props) => {
   return (
@@ -102,6 +102,5 @@ const CTALogoTwo = styled.img`
   width: 100%;
 `;
 
-
-
 export default Login;
+
