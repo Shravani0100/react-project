@@ -1,11 +1,11 @@
 import { configureStore } from "@reduxjs/toolkit";
-import userSlice from "../features/users/userSlice";
+import userReducer from "../features/users/userSlice";
 
 //import movieReducer from "../features/movie/movieSlice";
 
- const store=configureStore({
+const store=configureStore({
   reducer: {
-    user: userSlice.reducer,
+    user: userReducer,
     //movie: movieReducer,
   },
   middleware:  (getDefaultMiddleware) =>
