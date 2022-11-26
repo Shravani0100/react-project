@@ -9,15 +9,14 @@ import { setSignOutState } from "../features/users/userSlice.js";
 import { useEffect } from "react";
 
 const Header = (props) => {
-
   const dispatch = useDispatch();
   const history = useHistory();
   const userName = useSelector(selectUserName);
   const userPhoto = useSelector(selectUserPhoto);
 
-  useEffect(()=>{
-    auth.onAuthStateChanged(async (user) =>{
-      if(user) {
+  useEffect(() => {
+    auth.onAuthStateChanged(async (user) => {
+      if (user) {
         setUser(user);
         history.push("/home");
       }
@@ -44,7 +43,6 @@ const Header = (props) => {
         .catch((err) => alert(err.message));
     }
   };
-
 
   const setUser = (user) => {
     dispatch(
@@ -93,7 +91,6 @@ const Header = (props) => {
             </a>
           </NavMenu>
           <SignOut>
-            
             <UserImg src={userPhoto} alt={userName} />
             <DropDown>
               <span onClick={handleAuth}>Sign out</span>
@@ -144,7 +141,6 @@ const NavMenu = styled.div`
   position: relative;
   margin-right: auto;
   margin-left: 25px;
-
   a {
     display: flex;
     align-items: center;
@@ -188,11 +184,9 @@ const NavMenu = styled.div`
       }
     }
   }
-
-  
-   @media (max-width: 768px) {
+  /* @media (max-width: 768px) {
     display: none;
-  } 
+  } */
 `;
 
 const Login = styled.a`
@@ -203,6 +197,7 @@ const Login = styled.a`
   border: 1px solid #f9f9f9;
   border-radius: 4px;
   transition: all 0.2s ease 0s;
+  cursor:pointer;
   &:hover {
     background-color: #f9f9f9;
     color: #000;
@@ -211,7 +206,7 @@ const Login = styled.a`
 `;
 
 const UserImg = styled.img`
-  height: 50%;
+  height: 100%;
 `;
 
 const DropDown = styled.div`
@@ -249,6 +244,5 @@ const SignOut = styled.div`
     }
   }
 `;
-
 
 export default Header;

@@ -1,13 +1,13 @@
 import styled from "styled-components";
 import { Link } from "react-router-dom";
 import { useSelector } from "react-redux";
-import { selectRecommend } from "../features/movie/movieSlice";
+import { selectNewDisney } from "../features/movie/movieSlice";
 
-const Recommends = (props) => {
-  const movies = useSelector(selectRecommend);
+const NewDisney = (props) => {
+  const movies = useSelector(selectNewDisney);
   return(
     <Container>
-      <h2>Recommended for you</h2>
+      <h2>New to Disney+</h2>
       <Content>
         
       {movies &&
@@ -68,4 +68,4 @@ const Wrap = styled.div`
   }
 `;
 
-export default Recommends;
+export default NewDisney;
